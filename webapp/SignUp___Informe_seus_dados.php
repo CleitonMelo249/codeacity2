@@ -13,6 +13,8 @@ if(isset($_POST['email']))
 
     if($senha == $c_senha)
     {
+        session_start();
+        $_SESSION['mail'] = $email;
         $nome = $nome . " " . $sobrenome;
         $str_query = "INSERT INTO sindico(nome_sindico, email_sindico, telefone_sindico, id_payment, senha_sindico) VALUES('$nome', '$email', '$telefone', 'NULL', '$senha')";
         echo $str_query;

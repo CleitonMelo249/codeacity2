@@ -9,12 +9,14 @@ class crud_application
         $call_query = mysqli_query($link, $str_query);
         if ($call_query) 
         {
-            $return = mysqli_fetch_array($link, $str_query);
+        if ($call_query) 
+            $return = mysqli_fetch_array($call_query);
         } 
         else 
         {
             echo 'Sorry, error to execute query on database';
         }
+        var_dump($return);
         return $return;
     }
 
